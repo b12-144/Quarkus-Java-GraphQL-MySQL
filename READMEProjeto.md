@@ -1,21 +1,17 @@
-# Quarkus-Java-GraphQL-MySQL
-A Quarkus Java bootstrap application using GraphQL and MySQL.
+# app-quarkus
 
+This project uses Quarkus, the Supersonic Subatomic Java Framework.
+
+If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
 ## Running the application in dev mode
 
-Follow the steps below to run the app in dev mode:<br>
-1. Update the MySQL connection string to match your connection in application.properties .
-2. Execute the [database.sql](./database.sql) in your MySQL to create the database used in this example. 
-   
-
-Run the app with live coding using:
+You can run your application in dev mode that enables live coding using:
 ```shell script
 ./mvnw compile quarkus:dev
 ```
 
-Quarkus ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/
-GraphQL UI is available at http://localhost:8080/q/graphql-ui
+> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
 
 ## Packaging and running the application
 
@@ -31,8 +27,6 @@ The application is now runnable using `java -jar target/quarkus-app/quarkus-run.
 If you want to build an _über-jar_, execute the following command:
 ```shell script
 ./mvnw package -Dquarkus.package.type=uber-jar
-# In powershell, execute the following
-./mvnw package "-Dquarkus.package.type=uber-jar"
 ```
 
 The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
@@ -47,14 +41,13 @@ You can create a native executable using:
 Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
 ```shell script
 ./mvnw package -Pnative -Dquarkus.native.container-build=true
-# In powershell, execute the following
-./mvnw package -Pnative "-Dquarkus.native.container-build=true"
 ```
 
 You can then execute your native executable with: `./target/app-quarkus-1.0.0-runner`
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-More info on how to use Hibernate with Panache [here](https://quarkus.io/guides/hibernate-orm-panache) .
-More samples available at Quarkus Github [here](https://github.com/quarkusio/quarkus-quickstarts).
 
-Enjoy! ❤️
+## Related Guides
+
+- JDBC Driver - MySQL ([guide](https://quarkus.io/guides/datasource)): Connect to the MySQL database via JDBC
+- SmallRye GraphQL ([guide](https://quarkus.io/guides/smallrye-graphql)): Create GraphQL Endpoints using the code-first approach from MicroProfile GraphQL
